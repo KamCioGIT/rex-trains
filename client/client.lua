@@ -101,10 +101,14 @@ RegisterNetEvent('rex-trains:client:startroute', function(train, route, trainnam
                     if distance < Config.RouteOneTrainStops[i].dst2 then
                         SetTrainCruiseSpeed(train, stopspeed)
                         TriggerTrainWhistle(train, "STOPPED", 1, 0)
-                        Config.PrintDebug(trainname.. ' stopped at '..Config.RouteOneTrainStops[i].name)
+                        if Config.Debug then
+                            print(trainname.. ' stopped at '..Config.RouteOneTrainStops[i].name)
+                        end
                         Wait(Config.RouteOneTrainStops[i].waittime)
                         TriggerTrainWhistle(train, "NEXT_STATION", 1, 0)
-                        Config.PrintDebug(trainname.. ' is leaving '..Config.RouteOneTrainStops[i].name)
+                        if Config.Debug then
+                            print(trainname.. ' is leaving '..Config.RouteOneTrainStops[i].name)
+                        end
                         SetTrainCruiseSpeed(train, cruisespeed)
                         Wait(10000)
                     end
@@ -127,10 +131,14 @@ RegisterNetEvent('rex-trains:client:startroute', function(train, route, trainnam
                     if distance < Config.RouteTwoTrainStops[i].dst2 then
                         SetTrainCruiseSpeed(train, stopspeed)
                         TriggerTrainWhistle(train, "STOPPED", 1, 0)
-                        Config.PrintDebug(trainname.. ' stopped at '..Config.RouteTwoTrainStops[i].name)
+                        if Config.Debug then
+                            print(trainname.. ' stopped at '..Config.RouteTwoTrainStops[i].name)
+                        end
                         Wait(Config.RouteTwoTrainStops[i].waittime)
                         TriggerTrainWhistle(train, "NEXT_STATION", 1, 0)
-                        Config.PrintDebug(trainname.. ' is leaving '..Config.RouteTwoTrainStops[i].name)
+                        if Config.Debug then
+                            print(trainname.. ' is leaving '..Config.RouteTwoTrainStops[i].name)
+                        end
                         SetTrainCruiseSpeed(train, cruisespeed)
                         Wait(10000)
                     end
@@ -152,9 +160,13 @@ RegisterNetEvent('rex-trains:client:startroute', function(train, route, trainnam
                     Wait(1000)
                     if distance < Config.RouteOneTramStops[i].dst2 then
                         SetTrainCruiseSpeed(train, stopspeed)
-                        Config.PrintDebug(trainname.. ' stopped at '..Config.RouteOneTramStops[i].name)
+                        if Config.Debug then
+                            print(trainname.. ' stopped at '..Config.RouteOneTramStops[i].name)
+                        end
                         Wait(Config.RouteOneTramStops[i].waittime)
-                        Config.PrintDebug(trainname.. ' is leaving '..Config.RouteOneTramStops[i].name)
+                        if Config.Debug then
+                            print(trainname.. ' is leaving '..Config.RouteOneTramStops[i].name)
+                        end
                         SetTrainCruiseSpeed(train, cruisespeed)
                         Wait(10000)
                     end
@@ -178,7 +190,9 @@ function trainChecker(train)
         if isTrainIsReal ~= 0 then
             if not Citizen.InvokeNative(0x9FA00E2FC134A9D0, train) then
                 local createdBlip = addBlipToTrain(-399496385, train, "Train")
-                print("train blip created.", createdBlip)
+                if Config.Debug then
+                    print("train blip created.", createdBlip)
+                end
             end
         end
     end

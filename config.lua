@@ -1,8 +1,6 @@
 Config = {}
 
-Config.PrintDebug = function(message)
-    print(message)    
-end
+Config.Debug = false
 
 Config.TrainSetup = {
 
@@ -21,6 +19,7 @@ Config.TrainSetup = {
         startcoords = vector3(2729.5883, -1459.727, 45.903129),
         route = 'trainRouteTwo',
     },
+    --[[
     {
         trainname = 'City Tram',
         trainid = 'train3',
@@ -28,7 +27,7 @@ Config.TrainSetup = {
         startcoords = vector3(2608.539, -1171.967, 53.77959),
         route = 'tramRouteOne',
     },
-
+    --]]
 }
 
 -- train route one switches
@@ -98,13 +97,13 @@ Config.RouteOneTramSwitches = {
 -- train route one (via valentine)
 Config.RouteOneTramStops = {
 
-    { dst = 5.0, dst2 = 2.0, coords = vector3(2608.4047, -1167.057, 52.820415),   waittime = 15000, name = "Tram Stop One" },
-    { dst = 5.0, dst2 = 2.0, coords = vector3(2611.6467, -1272.544, 52.68666),   waittime = 15000, name = "Tram Stop Two" },
-    { dst = 5.0, dst2 = 2.0, coords = vector3(2662.8601, -1356.986, 48.655387),   waittime = 15000, name = "Tram Stop Three" },
-    { dst = 5.0, dst2 = 2.0, coords = vector3(2743.4992, -1412.629, 46.014671),   waittime = 15000, name = "Tram Stop Four" },
-    { dst = 5.0, dst2 = 2.0, coords = vector3(2803.9904, -1315.502, 46.508392),   waittime = 15000, name = "Tram Stop Five" },
-    { dst = 5.0, dst2 = 2.0, coords = vector3(2800.0747, -1243.424, 47.573413),   waittime = 15000, name = "Tram Stop Seven" },
-    { dst = 5.0, dst2 = 2.0, coords = vector3(2768.4904, -1167.407, 48.483325),   waittime = 15000, name = "Tram Stop Eight" },
-    { dst = 5.0, dst2 = 2.0, coords = vector3(2698.853, -1139.906, 50.469024),   waittime = 15000, name = "Tram Stop Nine" },
+    { dst = 5.0, dst2 = 2.0, coords = vector3(2608.4047, -1167.057, 52.820415), waittime = 15000, name = "Tram Stop One" },
+    { dst = 5.0, dst2 = 2.0, coords = vector3(2611.6467, -1272.544, 52.68666),  waittime = 15000, name = "Tram Stop Two" },
+    { dst = 5.0, dst2 = 2.0, coords = vector3(2662.8601, -1356.986, 48.655387), waittime = 15000, name = "Tram Stop Three" },
+    { dst = 5.0, dst2 = 2.0, coords = vector3(2743.4992, -1412.629, 46.014671), waittime = 15000, name = "Tram Stop Four" },
+    { dst = 5.0, dst2 = 2.0, coords = vector3(2803.9904, -1315.502, 46.508392), waittime = 15000, name = "Tram Stop Five" },
+    { dst = 5.0, dst2 = 2.0, coords = vector3(2800.0747, -1243.424, 47.573413), waittime = 15000, name = "Tram Stop Seven" },
+    { dst = 5.0, dst2 = 2.0, coords = vector3(2768.4904, -1167.407, 48.483325), waittime = 15000, name = "Tram Stop Eight" },
+    { dst = 5.0, dst2 = 2.0, coords = vector3(2698.853, -1139.906, 50.469024),  waittime = 15000, name = "Tram Stop Nine" },
 
 }
